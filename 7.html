@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sent = "Give papa a cup of proper coffee in a copper coffee cup."
+        const arr = sent.split(" ");
+        console.log(arr);
+        let mp = new Map();
+        arr.forEach((value) =>{
+            if(mp.has(value)){
+                var c = mp.get(value)
+                mp.set(value,c+1)
+            }
+            else{
+                mp.set(value,1)
+            }
+        })
+        console.log(mp);
+        var m = 0;
+        for(let k of mp.values()){
+            m = Math.max(m,k);
+        }
+
+        for([keys,values] of mp.entries()){
+            if(values==m){
+                console.log(keys);
+            }
+        }
+        console.log(m);
+
+    </script>
+</body>
+</html>

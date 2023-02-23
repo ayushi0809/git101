@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = "missippi";
+        let freq = new Map();
+        for(let ch of a){
+            if(freq.has(ch)){
+                var c = freq.get(ch)
+                freq.set(ch,c+1)
+            }
+            else{
+                freq.set(ch,1);
+            }
+        }
+        for([key,values] of freq.entries()){
+            console.log(key+"--->"+values);
+        }
+    </script>
+</body>
+</html>
